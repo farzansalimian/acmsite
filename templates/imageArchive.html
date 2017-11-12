@@ -1,0 +1,50 @@
+{% extends "site_base.html" %}
+ {% block links %}
+ <div class="row justify-content-between ">
+ 	<div class="col-sm-3 col-6">
+                <div>
+        {% load static %}     <img src="{% static 'if_rss_291711.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/home/" class="first after" style="text-decoration: none">اخبار</a>
+                 </div>
+            </div>
+            <div class="col-sm-3 col-6">
+                <div>
+           {% load static %}      <img src="{% static 'if_dev_1055073.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/contests/" class="first after" style="text-decoration: none">ارشیو سوالات</a>
+                 </div>
+            </div>
+           
+            <div class="col-sm-3 col-6">
+                <div>
+                 <img src="{% static '20-512.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/aboutus/" class="first after" style="text-decoration: none">درباره ما</a>
+                 </div>
+            </div>
+             <div class="col-sm-3 col-6">
+                <div>
+                 <img src="{% static 'if_Email_483486.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/contactus/" class="first after" style="text-decoration: none">تماس با ما</a>
+                 </div>
+            </div>
+        </div>
+    {% endblock %}
+{%block content%}
+<div style="overflow-x: hidden;">
+<div class="row container-fluid" >
+	{% for obj in object_list %}
+	<div class="col-sm-4 col-12 my-2">
+		<img src="{{obj.image.url}}" width="100%">
+	</div>
+	{% endfor %}
+</div>
+
+</div>
+{% endblock %}

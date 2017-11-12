@@ -1,0 +1,48 @@
+{% extends "site_base.html" %}
+       {% block links %}
+ <div class="row justify-content-between ">
+ 	<div class="col-sm-3 col-6">
+                <div>
+        {% load static %}     <img src="{% static 'if_rss_291711.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/home/" class="first after" style="text-decoration: none">اخبار</a>
+                 </div>
+            </div>
+            <div class="col-sm-3 col-6">
+                <div>
+           {% load static %}      <img src="{% static 'if_dev_1055073.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/contests/" class="first after" style="text-decoration: none">ارشیو سوالات</a>
+                 </div>
+            </div>
+            <div class="col-sm-3 col-6">
+                <div>
+                 <img src="{% static 'if_Images_379462.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/imagerchiveList/" class="first after" style="text-decoration: none">ارشیو تصاویر</a>
+                 </div>
+            </div>
+            <div class="col-sm-3 col-6">
+                <div>
+                 <img src="{% static '20-512.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
+                 </div>
+                 <div class="justify-content-center d-flex">
+                     <a href="/aboutus/" class="first after" style="text-decoration: none">درباره ما</a>
+                 </div>
+            </div>
+        </div>
+    {% endblock %}
+{%block content%}
+{% if form.errors.non_field_errors  %}
+{{ form.errors}}
+{% endif %}
+<form method="POST"> {% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Save</button>
+
+ </form>
+
+{% endblock %}
