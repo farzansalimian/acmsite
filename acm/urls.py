@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from homePage.views import homepage , showDetailNews, aboutUsView, contestsList, imageArchiveList,contactUsViewUser
+from homePage.views import homepage , showDetailNews, aboutUsView, contestsList, uiaiList, contentsFiles, studentContestList, studentContestByYearSemester, UiaiByYearSemester
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,8 +25,12 @@ urlpatterns = [
     url(r'^showDetailsNews/(?P<pk>\d+)/$', showDetailNews.as_view()),
     url(r'^aboutus/$', aboutUsView.as_view()),
     url(r'^contests/$', contestsList.as_view()),
-    url(r'^imagerchiveList/$', imageArchiveList.as_view()),
-    url(r'^contactus/$', contactUsViewUser.as_view()),
+    url(r'^uiaiByYearSemester/(?P<yearSemester>.*)/$', UiaiByYearSemester.as_view()),
+    url(r'^uiai/$', uiaiList.as_view()),
+    url(r'^contentsFiles/(?P<yearSemester>.*)/$', contentsFiles.as_view()),
+    url(r'^studentcontestlist/$', studentContestList.as_view()),
+    url(r'^studentContestByYearSemester/(?P<yearSemester>.*)/$', studentContestByYearSemester.as_view()),
+
 
 
 

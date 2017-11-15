@@ -1,47 +1,11 @@
 {% extends "site_base.html" %}
-       {% block links %}
- <div class="row justify-content-between ">
-         <div class="col-sm-3 col-6">
-                <div>
-        {% load static %}     <img src="{% static 'if_rss_291711.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/home/" class="first after" style="text-decoration: none">اخبار</a>
-                 </div>
-            </div>
-            <div class="col-sm-3 col-6">
-                <div>
-           {% load static %}      <img src="{% static 'if_dev_1055073.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/contests/" class="first after" style="text-decoration: none">ارشیو سوالات</a>
-                 </div>
-            </div>
-            <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Images_379462.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/imagerchiveList/" class="first after" style="text-decoration: none">ارشیو تصاویر</a>
-                 </div>
-            </div>
-                 <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Email_483486.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/contactus/" class="first after" style="text-decoration: none">تماس با ما</a>
-                 </div>
-            </div>
-        </div>
-    {% endblock %}
 {%block content%}
 <div style="overflow-x: hidden;">
 <div class="row">
 {% for obj in introductionOfMembers %}
 <div class="card-deck justify-content-between p-sm-5 my-2 col-12 col-sm-6 col-lg-4" >
   <div class="card">
-    <img class="card-img-top" src="{{obj.image.url}}" alt="Card image cap" width="100%">
+    <img class="card-img-top" src="{{obj.thumbnail.url}}" alt="Card image cap" width="100%">
     <div class="card-block">
       <h4 class="card-title justify-content-center d-flex">{{obj.name}}</h4>
       <p class="card-text" style="direction: rtl;">{{obj.context}}.</p>
@@ -53,12 +17,16 @@
 </div>
 {% endfor %}
 </div>
+<div style="height: 10vh" class="seprator"></div>
 {% for obj in aboutUs %}
- <div class="justify-content-between row  px-2" >
+ <div class="justify-content-between row  px-2 my-2" >
             <div class="col-3 align-self-center hidden-xs-down">
                               {% load static %} <img src="{% static 'lenguajes-programacion.png' %}" width="100%" />
             </div>
-            <div class="col-12 col-sm-6 justify-content-center d-flex" style="direction: rtl;">
+            <div class="col-12 justify-content-center hidden-sm-up mb-2" >
+                              {% load static %} <img src="{% static 'The-Best-Programming-Language-to-Learn.png' %}" width="100%"  />
+            </div>
+            <div class="col-12 col-sm-6 justify-content-center d-flex align-self-center" style="direction: rtl;">
                                 {{obj.context}}
             </div>
             <div class="col-3 align-self-center  hidden-xs-down">
@@ -66,4 +34,8 @@
             </div>
         </div>
         {% endfor %}
+        
 {% endblock %}
+
+
+

@@ -1,47 +1,11 @@
 {% extends "site_base.html" %}
-       {% block links %}
- <div class="row justify-content-between ">
-            <div class="col-sm-3 col-6">
-                <div>
-           {% load static %}      <img src="{% static 'if_dev_1055073.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/contests/" class="first after" style="text-decoration: none">ارشیو سوالات</a>
-                 </div>
-            </div>
-            <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Images_379462.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/imagerchiveList/" class="first after" style="text-decoration: none">ارشیو تصاویر</a>
-                 </div>
-            </div>
-            <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static '20-512.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/aboutus/" class="first after" style="text-decoration: none">درباره ما</a>
-                 </div>
-            </div>
-            <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Email_483486.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/contactus/" class="first after" style="text-decoration: none">تماس با ما</a>
-                 </div>
-            </div>
-        </div>
-    {% endblock %}
 {%block content%}
  
      {% for obj in object_list %}
     <div class="news-Back-Color" style="overflow-x: hidden">
         <div class="row">
             <div class="p-sm-5 col-12 col-sm-6  align-self-center">
-        <img src= "{{obj.image.url}}"  width="100%"/>
+        <img src= "{{obj.thumbnail.url}}"  width="100%"/>
                 <div class="justify-content-between d-flex">
                     <div class="">{{obj.author}}</div>
                     <div class="">{{obj.createdDate}}</div>
@@ -49,7 +13,7 @@
             </div>
             <div class="p-5 col-12 col-sm-6" style="direction: rtl;">
                 <h3 class="">{{obj.title}}</h3>
-                <h5 class="">{{obj.context}}</h5>
+                <h5 class="">{{obj.get_summary_text}}</h5>
             </div>
         </div>
         <div class="float-right" style="bottom: 50px">

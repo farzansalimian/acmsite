@@ -1,70 +1,39 @@
 {% extends "site_base.html" %}
-{% block links %}
- <div class="row justify-content-between ">
-  <div class="col-sm-3 col-6">
-                <div>
-        {% load static %}     <img src="{% static 'if_rss_291711.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/home/" class="first after" style="text-decoration: none">اخبار</a>
-                 </div>
-            </div>
-               <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Images_379462.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/imagerchiveList/" class="first after" style="text-decoration: none">ارشیو تصاویر</a>
-                 </div>
-            </div>
-           
-            <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static '20-512.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/aboutus/" class="first after" style="text-decoration: none">درباره ما</a>
-                 </div>
-            </div>
-             <div class="col-sm-3 col-6">
-                <div>
-                 <img src="{% static 'if_Email_483486.png' %}" class="img-fluid d-block m-auto" width="auto"  height="auto" />
-                 </div>
-                 <div class="justify-content-center d-flex">
-                     <a href="/contactus/" class="first after" style="text-decoration: none">تماس با ما</a>
-                 </div>
-            </div>
-        </div>
-    {% endblock %}
 {%block content%}
 
 
-<div>
-        <div class="m-2">
-  {% load static %} <img src="{% static 'Best-IoT-Prog-Languages-BLOG-IMAGE4.png' %}" width="100%" />
-            </div>
-        <div class="container ">
-            <table class="table table-responsive table-hover table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>تاریخ</th>
-      <th>فایل سوالات</th>
-    </tr>
-  </thead>
-  <tbody>
-        {% for obj in object_list %}
-    <tr>
-      <th scope="row">{{ forloop.counter }}</th>
-      <td>{{obj.date}}</td>
-      <td><a href="{{obj.file.url}}" download="{{obj.file}}">{{obj.file}}</a></td>
-    </tr>
-                        {% endfor %}
-  </tbody>
-</table>
-        </div>
-    </div>
-
+<div class="justify-content-between row p-md-2">
+  {% for obj in object_list %}
+  <div class="col-sm-4 col-12 my-2">
+    <a href="/contentsFiles/{{obj.yearSemester}}/">
+  <div class="card card-inverse ">
+ {% load static %} 
+  {% if forloop.counter|divisibleby:'3' %}
+<img src="{% static 'code.jpg'%}" width="100%" style="  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);"/>
+{% elif forloop.counter|divisibleby:'2' %}
+<img src="{% static 'programing-coding-languages.jpg' %}" width="100%" style="  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);"/>
+{% else %}
+<img src="{% static 'html-programming.jpg' %}" width="100%" style="  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);"/>
+{% endif %}  <div class="card-img-overlay  justify-content-center row">
+    <h1 class="card-title d-flex align-self-center">{{obj}}</h1>
+  </div>
+</div>
+</a>
+</div>
+{% endfor %}
+</div>
 
 
 
