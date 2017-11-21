@@ -25,9 +25,9 @@
     <tr>
       <th scope="row">{{ forloop.counter }}</th>
       <td>{{obj.date}}</td>
-      <td><a href="{{obj.file.url}}" download="{{obj.file}}">{{obj.problems}}</a></td>
-       <td><a href="{{obj.file.url}}" download="{{obj.file}}">{{obj.judgesData}}</a></td>
-              <td><a href="{{obj.file.url}}" download="{{obj.file}}">{{obj.rankingPhoto}}</a></td>
+      <td><a href="{{obj.problems.url}}" download="{{obj.problems}}">{{obj.problems}}</a></td>
+       <td><a href="{{obj.judgesData.url}}" download="{{obj.judgesData}}">{{obj.judgesData}}</a></td>
+              <td><a href="{{obj.rankingPhoto.url}}" download="{{obj.rankingPhoto}}">{{obj.rankingPhoto}}</a></td>
               
 
     </tr>
@@ -42,7 +42,7 @@
 {% for obj in acmContestsTeams %}
 <div class="card-deck justify-content-between p-sm-5 my-2 col-12 col-sm-6 col-lg-4" >
   <div class="card">
-    <img class="card-img-top" src="{{obj.thumbnail.url}}" alt="Card image cap" width="100%">
+    <img class="card-img-top" src="{{obj.image.url}}" alt="Card image cap" width="100%">
     <div class="card-block">
       <h4 class="card-title justify-content-center d-flex">{{obj.teamName}}</h4>
       <p class="card-text" style="direction: rtl;">{{obj.teamMembers}}.</p>

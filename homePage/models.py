@@ -17,7 +17,7 @@ class news(models.Model):
 	context       = models.TextField(null=False)
 	newsOrBlog    = models.BooleanField(default=True) # true represents news
 	class Meta:
-		ordering = ['-createdDate']
+		ordering = ['-pk']
 
 	def __str__(self):
 		return self.title;
@@ -58,8 +58,7 @@ class UiaiFiles(models.Model):
 	file    = models.FileField(null=False)
 	name    = models.CharField(max_length=150, null=False)
 	yearSemester     = models.ForeignKey('uiai',on_delete=models.CASCADE,null=False)
-	class Meta:
-		ordering = ['-pk']
+
 
 class UiaiContext(models.Model):
 	context = models.TextField(null=False)
@@ -79,8 +78,7 @@ class contests(models.Model):
 	judgesData   = models.FileField(null=False)
 	rankingPhoto = models.ImageField(null=False,upload_to='contestsRankingPhoto',height_field=None,width_field=None,max_length=None)
 	yearSemester     = models.ForeignKey('contestsYearSemester',on_delete=models.CASCADE,null=False)
-	class Meta:
-		ordering = ['-pk']
+
 
 
 		
@@ -116,8 +114,7 @@ class studentContestsFiles(models.Model):
 	file    = models.FileField(null=False)
 	name    = models.CharField(max_length=150, null=False)
 	yearSemester    = models.ForeignKey('studentContests',on_delete=models.CASCADE,null=False)
-	class Meta:
-		ordering = ['-pk']
+
 
 class studentContestsContext(models.Model):
 	context = models.TextField(null=False)
