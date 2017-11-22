@@ -27,7 +27,7 @@ SECRET_KEY = '5-&cjq_yuc&&a*3d_k2m$_b*etgt$_v*4+t=-c+a1$b*!%wluv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['acm.ui.ac.ir']
 
 
 # Application definition
