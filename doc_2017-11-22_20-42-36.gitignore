@@ -1,0 +1,4 @@
+db.sqlite3
+acm/__pycache__/
+homePage/__pycache__/
+homePage/migrations
