@@ -20,7 +20,7 @@ class showDetailNews(DV):
 
 
 class aboutUsView(LV):
-	template_name='aboutUs.html'
+	template_name='AboutUs.html'
 	queryset=aboutUs.objects.all()
 	def get_context_data(self,**kwargs):
 		context = super(aboutUsView,self).get_context_data(**kwargs)
