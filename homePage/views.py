@@ -4,11 +4,29 @@ from django.views.generic.list import ListView as LV
 from .models import news, aboutUs, introductionOfMembers, contests, UiaiimageArchiveList, UiaiFiles, contestsYearSemester, acmContestsTeams, UiaiContext, studentContests, studentContestsimageArchiveList, studentContestsFiles, studentContestsContext,uiai
 from django.views.generic import CreateView as CV
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 # Create your views here.
 class homepage(LV):
 	models=news
 	template_name='newsListView_list.html'
 	queryset=news.objects.all()
+
+
+	def get_context_data(self,**kwargs):
+		context = super(homepage,self).get_context_data(**kwargs)
+		queryset=news.objects.all()
+		paginator = Paginator(queryset, 10)
+
+		page = self.request.GET.get('page')
+		try:
+			contacts = paginator.page(page)
+		except PageNotAnInteger:
+			contacts = paginator.page(1)
+		except EmptyPage:
+			contacts = paginator.page(paginator.num_pages)
+		context['contacts'] = contacts
+		return context
 
 
 class showDetailNews(DV):

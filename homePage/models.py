@@ -66,9 +66,6 @@ class UiaiContext(models.Model):
 
 class uiai(models.Model):
 	yearSemester     = models.CharField(null=False,max_length=30)
-	class Meta:
-		ordering = ['-pk']
-
 	def __str__(self):
 		return self.yearSemester	
 

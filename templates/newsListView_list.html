@@ -1,7 +1,7 @@
 {% extends "site_base.html" %}
 {%block content%}
  
-     {% for obj in object_list %}
+     {% for obj in contacts %}
     <div class="news-Back-Color" style="overflow-x: hidden">
         <div class="row">
             <div class="p-sm-5 col-12 col-sm-6  align-self-center">
@@ -23,5 +23,19 @@
     <div class="seprator my-2" style="height: 50px">
     </div>
     {% endfor %}
+<div class="">
+    <span class="justify-content-center d-flex">
+        {% if contacts.has_previous %}
+            <a href="?page={{ contacts.previous_page_number }}" class="badge-success text-white badge-pill">صفحه قبل </a>
+        {% endif %}
 
+        <span class="">
+           &nbsp page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.&nbsp
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}" class="badge-success text-white badge-pill"> صفحه بعد</a>
+        {% endif %}
+    </span>
+</div>
     {% endblock %}

@@ -6,7 +6,7 @@
             <div class="col-3 align-self-center hidden-xs-down">
                               {% load static %} <img src="{% static 'lenguajes-programacion.png' %}" width="100%" />
             </div>
-            <div class="col-12 col-sm-6 justify-content-center d-flex" style="direction: rtl;">
+            <div class="col-12 col-sm-6 justify-content-center d-flex p-5" style="direction: rtl;">
                        {% for obj in UiaiContext %}         {{obj.context}}{% endfor %}
             </div>
             <div class="col-3 align-self-center  hidden-xs-down">
@@ -40,7 +40,6 @@
         {% for obj in uiaiFiles %}
     <tr>
       <th scope="row">{{ forloop.counter }}</th>
-      <td>{{obj.date}}</td>
       <td><a href="{{obj.file.url}}" download="{{obj.file}}">{{obj.name}}</a></td>
       <td>{{obj.file.size|filesizeformat}}</td>
     </tr>
