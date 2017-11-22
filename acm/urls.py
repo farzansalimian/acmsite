@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from homePage.views import homepage , showDetailNews, aboutUsView, contestsList, uiaiList, contentsFiles, studentContestList, studentContestByYearSemester, UiaiByYearSemester
 from django.conf import settings
-from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -35,3 +35,4 @@ urlpatterns = [
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns()
