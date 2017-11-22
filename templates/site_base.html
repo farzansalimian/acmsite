@@ -614,7 +614,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
     <div class="overlay-navigation">
         <nav role="navigation">
             <ul>
-                <li ><a href="//" data-content="اخرین مسابقات، همایش ها ،برنامه ها">اخبار</a></li>
+                <li ><a href="{% url 'home' %}" data-content="اخرین مسابقات، همایش ها ،برنامه ها">اخبار</a></li>
                 <li><a href="/contests/" data-content="سوالات هفتگی ای سی ام">مسابقات هفتگی ای سی ام</a></li>
                 <li><a href="/uiai/" data-content="ارشیو مسابقات گذشته و اخبار مسابقات آینده">مسابقات هوش مصنوعی</a></li>
                 <li><a href="/studentcontestlist/" data-content="ارشیو مسابقات گذشته و اخبار مسابقات آینده">مسابقات دانش آموزی</a></li>
@@ -643,7 +643,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             -o-transform: translateY(-50%);" >
-                <a href="//" class="mx-2 link">اخبار</a>
+                <a href="{% url 'home' %}" class="mx-2 link">اخبار</a>
                 <a href="/contests/" class="mx-2 link">مسابقات هفتگی ای سی ام</a>
                 <a href="/uiai/" class="mx-2 link" >مسابقات هوش مصنوعی</a>
                 <a  href="/studentcontestlist/" class="mx-2 link">مسابقات دانش آموزی</a>

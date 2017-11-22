@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage.as_view()),
+    url(r'^$', homepage.as_view(),name='home'),
     url(r'^showDetailsNews/(?P<pk>\d+)/$', showDetailNews.as_view()),
     url(r'^aboutus/$', aboutUsView.as_view()),
     url(r'^contests/$', contestsList.as_view()),
