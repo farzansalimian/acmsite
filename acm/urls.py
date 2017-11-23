@@ -25,11 +25,11 @@ urlpatterns = [
     url(r'^showDetailsNews/(?P<pk>\d+)/$', showDetailNews.as_view()),
     url(r'^aboutus/$', aboutUsView.as_view()),
     url(r'^contests/$', contestsList.as_view()),
-    url(r'^uiaiByYearSemester/(?P<yearSemester>.*)/$', UiaiByYearSemester.as_view()),
+    url(r'^uiai/(?P<yearSemester>.*)/$', UiaiByYearSemester.as_view()),
     url(r'^uiai/$', uiaiList.as_view()),
-    url(r'^contentsFiles/(?P<yearSemester>.*)/$', contentsFiles.as_view()),
-    url(r'^studentcontestlist/$', studentContestList.as_view()),
-    url(r'^studentContestByYearSemester/(?P<yearSemester>.*)/$', studentContestByYearSemester.as_view()),
+    url(r'^contests/(?P<yearSemester>.*)/$', contentsFiles.as_view()),
+    url(r'^uispc/$', studentContestList.as_view()),
+    url(r'^uispc/(?P<yearSemester>.*)/$', studentContestByYearSemester.as_view()),
 
 
 

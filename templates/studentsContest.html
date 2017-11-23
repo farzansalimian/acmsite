@@ -4,7 +4,7 @@
 {% for obj in object_list %}
  {% load static %}
 	<div class="col-sm-4 col-12 my-2 ">
-<a href="/studentContestByYearSemester/{{obj}}">
+<a href="/uispc/{{obj}}">
   <div class="card card-inverse" >
 {% if forloop.counter|divisibleby:'3' %}
 <img src="{% static 'Thinkstock-programmer.jpg'%}" width="100%" style="  -webkit-filter: blur(1px);
