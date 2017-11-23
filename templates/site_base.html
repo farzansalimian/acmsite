@@ -624,7 +624,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
     </div>
         <div style="height:12vh;width: 100% ;" class="header fixed-top"  id="Menu">
             
-            <div class="open-overlay float-right hidden-lg-up" id="menu-icon">
+            <div class="open-overlay float-right hidden-lg-up" id="menu-icon" >
                 <span class="bar-top"></span>
                 <span class="bar-middle"></span>
                 <span class="bar-bottom"></span>
@@ -673,9 +673,15 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
      </div>
      </div>
      <div class="justify-content-center d-flex">
-     	        <div class="back-footer-2 w-100 align-self-end text-white" style="text-align: center;"> 
-                        <p >Developed by Farzan Salimian & Masoud Sadeghi</p>
+     	        <div class="back-footer-2 w-100 align-self-end text-white mt-2" style="text-align: center;"> 
+                        <p >Developed by <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Farzan_salimiyan@yahoo.com" title="Farzan Salimian">
+  Farzan Salimian
+</button> & <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Masoud.hyper1996@gmail.com" title="Masoud Sadeghi">
+  Masoud Sadeghi
+</button></p>
                        <p >University of Isfahan Computer Engineering Faculty. All Rights Reserved.</p>
+
+
                        </div>  
      </div>                    
                 </div>
@@ -688,14 +694,18 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
     <script type="text/javascript">     $('.open-overlay').click(function () {
             $('#Menu').removeClass("header").removeClass("fixed-top");
+              $('[data-toggle="popover"]').popover('hide')
+
             $('#acm-header-logo-left').addClass("hidden");
                         $('#acm-header-logo-right').addClass("hidden");
             $('#menu-links').addClass("hidden").removeClass("d-flex");
             $('#menu-icon').removeClass("hidden-lg-up");
-$("#menu-icon").css({ 'position' : '' });
+$("#menu-icon").css({ 'position' : 'fixed','top' : '5vh'});
 
             $('.open-overlay').css('pointer-events', 'none');
 
@@ -741,7 +751,7 @@ $("#menu-icon").css({ 'position' : '' });
                 bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
                 overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
                  $('#Menu').addClass("header").addClass("fixed-top");
-                 $("#Menu").css({ 'position' : '' });
+$("#menu-icon").css({ 'position' : '','top' : ''});
 
                   $('#acm-header-logo-left').removeClass("hidden");
                         $('#acm-header-logo-right').removeClass("hidden");
@@ -770,6 +780,9 @@ $("#menu-icon").css({ 'position' : '' });
                 })
             }
         }) </script>
+    <script type="text/javascript">$(function () {
+  $('[data-toggle="popover"]').popover()
+})</script>
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
