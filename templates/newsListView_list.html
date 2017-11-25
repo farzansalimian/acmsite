@@ -11,13 +11,13 @@
                     <div class="">{{obj.createdDate}}</div>
                 </div>
             </div>
-            <div class="p-5 col-12 col-sm-6" style="direction: rtl;">
-                <h3 class="">{{obj.title}}</h3>
-                <h5 class="">{{obj.get_summary_text}}</h5>
+            <div class="py-5 px-4 px-sm-5 col-12 col-sm-6" style="direction: rtl;">
+                <h2 class="">{{obj.title}}</h3>
+                <p class="">{{obj.get_summary_text}}</p>
             </div>
         </div>
-        <div class="float-right" style="bottom: 50px">
-        	<a href="/showDetailsNews/{{obj.pk}}/" class="mr-5 badge badge-pill badge-info"> <h4>ادامه مطلب<h3></a>
+        <div class="float-right pt-2 px-1 px-sm-4" style="bottom: 50px">
+        	<a href="/showDetailsNews/{{obj.pk}}/" class=" badge badge-pill badge-info p-2"> <h4>ادامه مطلب<h3></a>
         </div>
     </div>
     <div class="seprator my-2" style="height: 50px">
@@ -40,17 +40,19 @@
 </div>
     {% endblock %}
 
-{% block slideshow1 %}
+{% block slideshow %}
 <div style="width: 100%;" >
 <div class=" w3-content w3-display-container ">
 {% for obj in lastnews %}
 <div class="w3-display-container mySlides" >
-  <img src="{{obj.image.url}}" style="max-height: 85vh" width="100%"  /> 
+    <div class=" d-flex justify-content-center">
+      <img src="{{obj.image.url}}" style="max-height: 88vh; width: auto;"   /> 
   <div class="w3-display-bottommiddle w3-large w3-container w3-padding-16 bg_slideshow Jumbotron">
    
     <a href="/showDetailsNews/{{obj.pk}}/" class="text-white"> <h4> {{obj.title}}<h3></a>
   </div>
-</div>
+</div></div>
+
 {% endfor %}
 <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
 <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
