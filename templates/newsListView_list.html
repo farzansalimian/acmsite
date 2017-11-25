@@ -1,6 +1,19 @@
 {% extends "site_base.html" %}
 {%block content%}
- 
+<style type="text/css">
+    
+@media (max-width: 991px) {
+  .height-md-down {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .height-md-up {
+    height: 88vh;
+  }
+}
+</style> 
      {% for obj in contacts %}
     <div class="news-Back-Color" style="overflow-x: hidden">
         <div class="row">
@@ -42,16 +55,17 @@
 
 {% block slideshow %}
 <div style="width: 100%;" >
-<div class=" w3-content w3-display-container ">
+<div class=" w3-content w3-display-container">
 {% for obj in lastnews %}
 <div class="w3-display-container mySlides" >
     <div class=" d-flex justify-content-center">
-      <img src="{{obj.image.url}}" style="max-height: 88vh; width: auto;"   /> 
+      <img src="{{obj.image.url}}" style="width: auto;" class="height-md-up height-md-down" />
+      </div> 
   <div class="w3-display-bottommiddle w3-large w3-container w3-padding-16 bg_slideshow Jumbotron">
    
     <a href="/showDetailsNews/{{obj.pk}}/" class="text-white"> <h4> {{obj.title}}<h3></a>
   </div>
-</div></div>
+</div>
 
 {% endfor %}
 <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
