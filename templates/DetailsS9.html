@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block header %}
+ 
+                                      <a href="{% url 'home' %}" class="link">صفحه اصلی</a>
+
+{% endblock %}
+{% block headerFirstPart %}
+<div class="dropdown">
+  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
+</div>
+
+
+
+        {% endblock %}
+{% block content %}
+<div class="container my-5">
+<div class="row" style="direction: rtl;">
+	<div class="col-2 bg-faded m-2">تعداد سيم کارت</div>
+		<div class="col-8 my-2 bg-faded"></div>
+	<div class="col-2 bg-faded m-2">توضيحات سيم کارت</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">پشتيباني از کارت حافظه جانبي</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">ابعاد</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">وزن</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">حداکثر ظرفيت کارت حافظه</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">ساختار بدنه</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">صفحه نمايش رنگي</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">ويژگي‌هاي خاص</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">تراشه</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">حافظه داخلي</div>
+		<div class="col-8 my-2  bg-faded"></div>
+			<div class="col-2 bg-faded m-2">مقدار RAM</div>
+		<div class="col-8 my-2  bg-faded"></div>
+
+</div>
+</div>
+{% endblock %}
+{% block aboutUsLink %}
+
+                                    <a href="{% url 'mtplus' %}" class="link text-white">مایکروتل</a>
+{% endblock %}

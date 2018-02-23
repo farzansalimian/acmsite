@@ -1,0 +1,42 @@
+{% extends "baseLowSpeed.html" %}
+{% block content %}
+<div class="bg-inverse w-100 h-100 text-white" style="min-height: 100vh">
+<!-- Nav tabs -->
+<div class="d-flex justify-content-center p-5">
+<ul class="nav nav-tabs  my-5" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#microtel" role="tab">مایکروتل</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#buy" role="tab">پیش خرید</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#review" role="tab">نقد و بررسی</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#details" role="tab">مشخصات فنی</a>
+  </li>
+</ul>
+</div>
+<!-- Tab panes -->
+<div class="  d-flex justify-content-center"">
+<div class="tab-content">
+  <div class="tab-pane active show fade" id="microtel" role="tabpanel">
+  	<p class="text-center container">
+  	درباره مایکروتل پلاس مایکروتل پلاس، قطب توانمند شرکت پارس مایکروتل، تاثیرگذارترین مجموعه زنجیره ای در بازار موبایل و تبلت ایران است. مایکروتل پلاس با دارا بودن فروشگاه های مدرن در سراسر ایران، به عنوان اولین و بزرگترین شرکت زنجیره ای عرضه کننده تلفن های هوشمند و تبلت با گارانتی پارس مایکروتل در کشور شناخته می شود 
+  	<br>
+  	<a href="{% url 'mtpluslowSpeed' %}" class="btn btn-info my-3">ادامه</a>
+</p>
+
+  </div>
+  <div class="tab-pane fade" id="buy" role="tabpanel">.asd.</div>
+  <div class="tab-pane fade" id="review" role="tabpanel">...</div>
+  <div class="tab-pane fade" id="details" role="tabpanel">...</div>
+</div>
+</div>  </div> 
+
+
+
+
+
+{% endblock %}
