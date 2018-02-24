@@ -1,0 +1,121 @@
+{% extends "baseLowSpeed.html" %}
+
+{% block headerFirstPart %}
+<div class="dropdown">
+  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
+</div>
+        {% endblock %}
+
+{% block header %}
+ 
+                                <a href="{% url 'home' %}" class="link">صفحه اصلی</a>
+
+{% endblock %}
+
+{% block content %}
+
+{% load widget_tweaks %}
+<div class="container mt-5">
+  <div class="my-2">
+  {{ form.non_field_errors }}
+  </div>
+  <form class='text-right' method="post" action="{% url 'buyS9' %}">
+    {% csrf_token %}
+      <div class="form-group row">
+      <label for="{{ form.buyerFirstName.id_for_label }}" class="col-sm-2 col-form-label">نام</label>
+      <div class="col-sm-10">
+   {{ form.buyerFirstName|add_class:"form-control"|attr:"placeholder:نام" }}
+         </div>
+                     <div class="col-sm-10 push-sm-2">
+            {{ form.buyerFirstName.errors }}
+         </div>
+    </div>
+      <div class="form-group row">
+      <label for="{{ form.buyerlastName.id_for_label }}" class="col-sm-2 col-form-label">نام خانوادگی</label>
+      <div class="col-sm-10">
+   {{ form.buyerlastName|add_class:"form-control"|attr:"placeholder:نام خانوادگی" }}
+         </div>
+              <div class="col-sm-10 push-sm-2 dirRtl">
+            {{ form.buyerlastName.errors }}
+         </div>
+    </div>
+
+      <div class="form-group row">
+      <label for="{{ form.nationalCode.id_for_label }}" class="col-sm-2 col-form-label">ادرس</label>
+      <div class="col-sm-10">
+   {{ form.nationalCode|add_class:"form-control"|attr:"placeholder:کد ملی" }}
+         </div>
+               <div class="col-sm-10 push-sm-2 dirRtl">
+            {{ form.nationalCode.errors }}
+         </div>
+    </div>
+          <div class="form-group row">
+      <label for="{{ form.address.id_for_label }}" class="col-sm-2 col-form-label">ادرس</label>
+      <div class="col-sm-10">
+   {{ form.address|add_class:"form-control"|attr:"placeholder:تکرار گذرواژه" }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.address.errors }}         </div>
+    </div>
+
+              <div class="form-group row">
+      <label for="{{ form.phoneNumber.id_for_label }}" class="col-sm-2 col-form-label">تلفن ثابت</label>
+      <div class="col-sm-10">
+   {{ form.phoneNumber|add_class:"form-control"|attr:"placeholder:تلفن ثابت" }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.phoneNumber.errors }}         </div>
+    </div>
+
+              <div class="form-group row">
+      <label for="{{ form.mobileNumber.id_for_label }}" class="col-sm-2 col-form-label">تلفن همراه</label>
+      <div class="col-sm-10">
+   {{ form.mobileNumber|add_class:"form-control"|attr:"placeholder:تلفن همراه " }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.mobileNumber.errors }}         </div>
+    </div>
+
+              <div class="form-group row">
+      <label for="{{ form.requireDeliveryTime.id_for_label }}" class="col-sm-2 col-form-label">زمان تحویل مورد نظر</label>
+      <div class="col-sm-10">
+   {{ form.requireDeliveryTime|add_class:"form-control"|attr:"placeholder:زمان تحویل مورد نظر" }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.requireDeliveryTime.errors }}         </div>
+    </div>
+
+              <div class="form-group row">
+      <label for="{{ form.Deliveryaddress.id_for_label }}" class="col-sm-2 col-form-label">آدرس تحویل</label>
+      <div class="col-sm-10">
+   {{ form.Deliveryaddress|add_class:"form-control"|attr:"placeholder:آدرس تحویل" }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.Deliveryaddress.errors }}         </div>
+    </div>
+
+              <div class="form-group row">
+      <label for="{{ form.deliveryMode.id_for_label }}" class="col-sm-2 col-form-label">شیوه تحویل مدنظر</label>
+      <div class="col-sm-10">
+   {{ form.deliveryMode|add_class:"form-control"|attr:"placeholder:شیوه تحویل مدنظر" }}
+         </div>           
+      <div class="col-sm-10 push-sm-2 dirRtl">
+{{ form.deliveryMode.errors }}         </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" value="ثبت خرید" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </div>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}
+
+{% block aboutUsLink %}
+
+                                    <a href="{% url 'mtplus' %}" class="link text-white">مایکروتل</a>
+{% endblock %}

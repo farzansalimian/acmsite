@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin 
-from showsomething.views import HomePage, ReviewS9, ReviewS9Plus, DetailsS9, DetailsS9Plus, BuyerView ,mtplusView, AskSpeed, lowSpeedView, MtpluslowSpeedView
+from showsomething.views import HomePage, ReviewS9, ReviewS9Plus, DetailsS9, DetailsS9Plus, ReviewS9PlusLowSpeed, ReviewS9LowSpeed, BuyerViewLowSpeed, BuyerView ,mtplusView, DetailsS9LowSpeed, DetailsS9PlusLowSpeed, AskSpeed, lowSpeedView, MtpluslowSpeedView
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.conf import settings
 
@@ -24,14 +24,20 @@ urlpatterns = [
     url(r'^homepage/$', HomePage.as_view(), name='home'),
     url(r'^reviewS9plus/', ReviewS9Plus.as_view(), name='reviews9plus'),
     url(r'^reviewS9/', ReviewS9.as_view(), name='reviews9'),
+    url(r'^reviewS9plusLowSpeed/', ReviewS9PlusLowSpeed.as_view(), name='reviews9plusLowSpeed'),
+    url(r'^reviewS9LowSpeed/', ReviewS9LowSpeed.as_view(), name='reviews9LowSpeed'),
     url(r'^DetailsS9plus/', DetailsS9Plus.as_view(), name='Details9plus'),
     url(r'^DetailsS9/', DetailsS9.as_view(), name='Detailss9'),
     url(r'^buyS9/', BuyerView.as_view(), name='buyS9'),
+    url(r'^buyS9LowSpeed/', BuyerViewLowSpeed.as_view(), name='buyS9LowSpeed'),
     url(r'^buyS9Plus/', BuyerView.as_view(), name='buyS9Plus'),
+    url(r'^buyS9PlusLowSpeed/', BuyerViewLowSpeed.as_view(), name='buyS9PlusLowSpeed'),
     url(r'^mtplus/', mtplusView.as_view(), name='mtplus'),
     url(r'^$', AskSpeed.as_view(), name='askSpeed'),
     url(r'^lowSpeed/$', lowSpeedView.as_view(), name='lowSpeed'),
     url(r'^mtpluslowSpeed/$', MtpluslowSpeedView.as_view(), name='mtpluslowSpeed'),
+    url(r'^DetailsS9pluslowSpeed/$', DetailsS9PlusLowSpeed.as_view(), name='Details9plusLowSpeed'),
+    url(r'^DetailsS9lowSpeed/$', DetailsS9LowSpeed.as_view(), name='Detailss9LowSpeed'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 

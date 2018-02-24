@@ -24,6 +24,11 @@ class HomePage(TemplateView):
 class ReviewS9(TemplateView):
 	template_name = "ReviewS9.html"
 
+class ReviewS9PlusLowSpeed(TemplateView):
+	template_name = "ReviewS9PlusLowSpeed.html"
+class ReviewS9LowSpeed(TemplateView):
+	template_name = "ReviewS9LowSpeed.html"
+
 class ReviewS9Plus(TemplateView):
 	template_name = "ReviewS9Plus.html"
 
@@ -34,6 +39,11 @@ class DetailsS9(TemplateView):
 class DetailsS9Plus(TemplateView):
 	template_name = "DetailsS9Plus.html"
 
+class DetailsS9LowSpeed(TemplateView):
+	template_name = "DetailsS9LowSpeed.html"
+
+class DetailsS9PlusLowSpeed(TemplateView):
+	template_name = "DetailsS9PlusLowSpeed.html"
 
 class BuyerView(SuccessMessageMixin, CreateView):
 	def get(self, request, *args, **kwargs):
@@ -43,7 +53,14 @@ class BuyerView(SuccessMessageMixin, CreateView):
 	template_name = 'buyers.html'
 	success_url = '/'
 	success_message = "ثبت نام با موفقیت انجام شد"
-
+class BuyerViewLowSpeed(SuccessMessageMixin, CreateView):
+	def get(self, request, *args, **kwargs):
+		
+		return render(request, 'buyersLowsSpeed.html', {'form': buyersForm()})
+	form_class = buyersForm
+	template_name = 'buyersLowsSpeed.html'
+	success_url = '/'
+	success_message = "ثبت نام با موفقیت انجام شد"
 
 class mtplusView(TemplateView):
 	template_name='mtplus.html'

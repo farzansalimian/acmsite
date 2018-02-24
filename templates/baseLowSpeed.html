@@ -3,6 +3,155 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+.shift {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  box-shadow: 0px 5px 0px #dedede;
+}
+.shift ul {
+  list-style: none;
+  text-align: center;
+}
+.shift ul li {
+  display: inline-block;
+}
+.shift ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.shift ul li a,
+.shift ul li a:after,
+.shift ul li a:before {
+  transition: all .5s;
+}
+.shift ul li a:hover {
+  color: #555;
+}
+
+.circle {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  box-shadow: 0px 5px 0px #dedede;
+}
+.circle ul {
+  list-style: none;
+  text-align: center;
+}
+.circle ul li {
+  display: inline-block;
+}
+.circle ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.circle ul li a,
+.circle ul li a:after,
+.circle ul li a:before {
+  transition: all .5s;
+}
+.circle ul li a:hover {
+  color: #555;
+}
+
+
+
+/* Circle */
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+}
+
+/* SHIFT */
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #91640F;
+}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: white;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -15,7 +164,7 @@ body {
     top: 0;
     left: 0;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgba(256,256,256, 1);
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -31,13 +180,12 @@ body {
 .overlay a {
     padding: 8px;
     text-decoration: none;
-    font-size: 36px;
     color: #818181;
     transition: 0.3s;
 }
 
 .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
+    color: orange;
 }
 
 .overlay .closebtn {
@@ -54,7 +202,67 @@ body {
     top: 15px;
     right: 35px;
   }
+}.dropdown {
+    position: relative;
+    display: inline-block;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;    border-radius: 5px;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}.open-overlay {
+            padding: 15px;
+            position: relative;
+            transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            width: 70px;
+            right: 0px;
+            z-index: 100;
+            display: block;
+            cursor: pointer;
+            float: right;
+        }
+
+            .open-overlay span {
+                display: block;
+                height: 1px;
+                background-color: #fff;
+                cursor: pointer;
+                margin-top: 8px;
+            }
+               .back-footer-1{
+            background: #070000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #070000, #4C0001, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #070000, #4C0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+            .back-footer-2{background: #485563;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          }
+          .blackBackground{
+            background-color: #000000
+          }
 </style><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -62,50 +270,92 @@ body {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   
 </head>
-<body>
+<body id="body">
 
 <div id="myNav" class="overlay">  
-	  <div class="justify-content-center d-flex">
+	  <div class="justify-content-center d-flex mt-5">
             {% load static %}    <img src="{% static 'samsung_logo_PNG16.png' %}" style="max-width: 100%" >
 
   </div>
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <div class="overlay-content"><div class="dropdown">
+    <div class="overlay-content">
+      <a href="{% url 'home' %}" class="">تغییر به اینترنت پرسرعت</a>
+    	<div class="dropdown">
   <a href="#review" class=" link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="dropdown-item" href='{% url "reviews9plus" %}'>S9+</a>
-    <a class="dropdown-item" href='{% url "reviews9" %}'>S9</a>
+    <a class="dropdown-item" href='{% url "reviews9plusLowSpeed" %}'>S9+</a>
+    <a class="dropdown-item" href='{% url "reviews9LowSpeed" %}'>S9</a>
   </div>
 </div> <div class="dropdown">
   <a href="#buy" class="dropbtn  link">پیش خرید</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="dropdown-item" href='{% url "buyS9Plus" %}'>S9+</a>
-    <a class="dropdown-item" href='{% url "buyS9" %}'>S9</a>
+    <a class="dropdown-item" href='{% url "buyS9PlusLowSpeed" %}'>S9+</a>
+    <a class="dropdown-item" href='{% url "buyS9LowSpeed" %}'>S9</a>
   </div>
 </div><div class="dropdown">
   <a href="#details" class="dropbtn link">مشخصات فنی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="dropdown-item" href='{% url "Details9plus" %}'>S9+</a>
-    <a class="dropdown-item" href='{% url "Detailss9" %}'>S9</a>
+    <a class="dropdown-item" href='{% url "Details9plusLowSpeed" %}'>S9+</a>
+    <a class="dropdown-item" href='{% url "Detailss9LowSpeed" %}'>S9</a>
   </div>
 </div>
-                                   <a href="{% url 'mtplus' %}" class="">مایکروتل</a>
+                                   <a href="{% url 'mtpluslowSpeed' %}" class="">مایکروتل</a>
 
 </div>
 
   </div>
- <div style=";width: 100% ;" class="header fixed-top bg-inverse p-3"  id="Menu">
-            <div class="open-overlay float-right text-white" id="menu-icon" onclick="openNav()" >
-                منو
-            </div>
-  </div>
+ <div style=";width: 100% ;height: 5vh;min-height: 50px " class="header fixed-top bg-inverse text-white py-2 d-flex justify-content-between"  id="Menu">
+      
+<div class="mx-2 font-weight-bold">سامسونگ</div> 
+<div class="mx-2 font-weight-bold">Galaxy s9 | s9+</div>  
+    <div class="open-overlay align-self" id="menu-icon" >
+      <div  onclick="openNav()">
+                <span class="bar-top"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-bottom"></span></div>
+            </div> </div>
+  <div style="top: 5vh;position: relative;">
 {% block content %}
 {% endblock %}
+</div>
 
+ <footer class="" style=" width: 100%;margin-top: 10vh; ">
+            <div class="w-75 back-footer-1 rounded justify-content-center d-flex p-2" style="height: 16vh; margin: auto; top:8vh; position: relative">
+                <img src="{% static '2000px-Samsung_Logo.svg.png' %}" style="max-width: 100%;height:15vh;" class="align-self-center" />
+            </div>
+            <div class="w-100 back-footer-2" style="height: 20vh">
+                <div class="" style="top: 8vh; position: relative">
+                    <div class="justify-content-center d-flex">
+                    <div class="m-1 ">
+        <a href="https://t.me/ui_acm"><img src="{% static 'if_Telegram_1851804.png'%}" width="40px" height="40px" class="footericon" /></a>
+        </div>
+        <div class="m-1 ">
+      <a href="https://www.instagram.com/samsungmobileir/?hl=en"> <img src="{% static 'instagram-icon-circle-vector-logo.png' %}" class="footericon img-fluid" width="40px" height="40px" />  </a>  
+     </div>
+      <div class="m-1 ">
+     <a href="http://www.samsung.com/iran/">   <img src="{% static 'gear-sport_apps_logo01.png' %}" class="img-fluid footericon" width="40px" height="40px" />   </a>
+     </div>
+     </div>
+     <div class="justify-content-center d-flex">
+                <div class="back-footer-2 w-100 align-self-end text-white mt-2" style="text-align: center;"> 
+                        <p >Developed by <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Farzan_salimiyan@yahoo.com" title="Farzan Salimian">
+  Farzan Salimian
+</button> </p>
+                       <p >ALL CONTENTS COPYRIGHT © SAMSUNG ELECTRONICS CO., LTD.
+
+</p>
+
+
+                       </div>  
+     </div>                    
+                </div>
+            </div> 
+         
+        </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
@@ -136,6 +386,7 @@ function openNav() {
     document.getElementById("myNav").style.width = "100%";
                 $('#Menu').removeClass("header").removeClass("fixed-top");
                 $('#menu-icon').addClass("hidden").addClass("fixed-top");
+
 }
 
 function closeNav() {
@@ -145,5 +396,7 @@ function closeNav() {
 
 }
 </script>
+{% block script %}
+{% endblock %}
 </body>
 </html>

@@ -130,7 +130,7 @@ figure.snip0053.hover:after {
   transform: skewX(-7deg) translateX(10px);
 }
 .overlay {
-    height: 100%;
+
     width: 0;
     position: fixed;
     z-index: 1;
@@ -392,16 +392,9 @@ figure.snip1111.hover a:nth-child(3) {
             nav li:nth-of-type(5) {
                 background-color: #99B998
             }
-
-        .open-overlay {
+.open-overlay {
             padding: 15px;
             position: relative;
-            top: 20%;
-            transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            -o-transform: translateY(-50%);
             width: 70px;
             right: 0px;
             z-index: 100;
@@ -635,7 +628,7 @@ background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25
 background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-
+.blackBack{background-color: #000000}
 
 
 /* W3.CSS 4.05 October 2017 by Jan Egil and Borge Refsnes */
@@ -930,7 +923,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 
 </head>
 
-<body style="width: 100%;height: 100%">
+<body style="width: 100%;height: 100%" id="body">
 
    {% load static %}
    <div class="overlay-navigation" style="">
@@ -1002,7 +995,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
         </nav>
     </div>
     <div id="myNav" class="overlay">
-  <div class="justify-content-center d-flex">
+  <div class="justify-content-center d-flex mt-5"">
                 <img src="{% static 'samsung_logo_PNG16.png' %}" style="max-width: 100%" >
 
   </div>
@@ -1010,6 +1003,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
   <div class="overlay-content">
         {% block headerFirstPart %}
         {% endblock %}
+        <a href="{% url 'lowSpeed' %}" class="">تغییر به اینترنت کم سرعت</a>
 <div class="dropdown">
   <a href="#review" class=" link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1125,21 +1119,28 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
   
 </div>
   <div style="height:12vh;width: 100% ;" class="header fixed-top"  id="Menu">
-            <div class="open-overlay float-right " id="menu-icon" onclick="openNav()" >
+    <div class="w-100">
+    <div class="hidden-lg-up  d-flex justify-content h-100 d-flex justify-content-between w-100"> 
+            <div class="mx-2 font-weight-bold  align-self-center text-white">Galaxy s9 | s9+</div>  
+
+      <div class="open-overlay align-self-center" id="menu-icon" >
+      <div  onclick="openNav()">
                 <span class="bar-top"></span>
                 <span class="bar-middle"></span>
-                <span class="bar-bottom"></span>
+                <span class="bar-bottom"></span></div>
             </div>
-                     {% load static %} 
- <div class="headerText text-white" style="">سامسونگ</div>
-
-                <div id="menu-links" class="  hidden-md-down d-flex justify-content-between p-2" style="  position: relative;
-            top: 80%;
-            transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            -o-transform: translateY(-50%);" >
+</div></div>
+    <div class="d-flex justify-content-between text-white align-self-center hidden-md-down">
+           <div class="mx-2 font-weight-bold align-self-center">سامسونگ</div> 
+<div class="mx-2 font-weight-bold  align-self-center"><h3><strong> Galaxy s9 | s9+</strong></h3></div>  
+    <div class="open-overlay align-self-center" id="menu-icon" >
+      <div  onclick="openNav()">
+                <span class="bar-top"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-bottom"></span></div>
+            </div>
+</div>
+<div id="menu-links" class="  hidden-md-down d-flex justify-content-between px-5 " >
 
 
 <div class="dropdown">
@@ -1187,11 +1188,13 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 
 
         <div style="top: 12vh;position: relative;">
-{% block slideshow %}
-{% endblock %}
+
 <div style="min-height: 57vh">
-	<img src="{% static 'header_desktop.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />
-{%block content%}
+<div class="card card-inverse border-0 ">
+{% load static %}<img src="{% static 'galaxy-s8-overview_backscreen.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
+   <img src="{% static 'galaxy-s8-overview_body.png' %}" style="max-width: 100%;height:auto;" class="align-self-center" /> 
+  </div>
+</div>{%block content%}
 {% endblock %}
  </div>
         </div> 
@@ -1288,13 +1291,14 @@ function openNav() {
     document.getElementById("myNav").style.width = "100%";
                 $('#Menu').removeClass("header").removeClass("fixed-top");
                 $('#menu-icon').addClass("hidden").addClass("fixed-top");
+                $('.overlay').addClass("h-100");
 }
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
                 $('#Menu').addClass("header").addClass("fixed-top");
                 $('#menu-icon').removeClass("hidden").removeClass("fixed-top");
-
+              $('.overlay').removeClass("h-100");
 }
 </script>
 {% block script %}{% endblock %}

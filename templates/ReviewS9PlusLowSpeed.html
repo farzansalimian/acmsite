@@ -1,16 +1,8 @@
-{% extends "base.html" %}
-{% block header %}
-                                 <a href="{% url 'home' %}" class="link">صفحه اصلی</a>
+{% extends "baseLowSpeed.html" %}
 
-{% endblock %}
-{% block headerFirstPart %}
-<div class="dropdown">
-  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
-</div>
-        {% endblock %}
 {% block content %}
-
-<div class=" text-white "> 
+{% load static %}
+<div class=" text-white"> 
 <div class=" text-right py-5">
 	<div class="text-center font-weight-bold display-5 container">
 		در تصویری بزرگ‌تر غوطه‌ور شوید درحالی که کماکان براحتی در دستانتان جای می‌گیرد. Galaxy S8 و S8+‎ با رهایی از بند محدودیت قاب‌ها، به شما سطحی صاف و صیقلی ارائه می‌دهند که تا پشت لبه‌ها ادامه یافته است. برای رسیدن به این نقطه، ما گوشی را از درون تا بیرون دوباره طراحی کردیم. دکمه خانه را در زیر صفحه نمایش قرار دادیم، که تا وقتی به آن احتیاج نداشته باشید همانجا مخفی بماند و شما بی نیاز از بدست گرفتن گوشی بزرگتر٬ بدون هیچ مانعی صفحه نمایش بزرگتر داشته باشید.
@@ -25,24 +17,15 @@
 			صفحه نمایش Infinity Display استاندارد جدیدی از تجربیات بی‌وقفه و همه‌جانبه تعریف می‌کند. شما را قادر می‌سازد که صفحه نمایشی بزرگتر بدون الزام به داشتن گوشی بزرگتر داشته باشید. بنابراین درحالی که نمایی عظیم‌تر دارید، Galaxy S8 و S8+‎ در دستتان کوچک هستند تا کارکردن و نگه‌داشتن‌شان راحت‌تر باشد.
 </p>
 	</div>
-<div class="card card-inverse border-0 ">
-{% load static %}<img src="{% static 'galaxy-s8-overview_backscreen.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-   <img src="{% static 'galaxy-s8-overview_body.png' %}" style="max-width: 100%;height:auto;" class="align-self-end" /> 
-  </div>
-</div>
+
 	<div class="row my-5 container d-flex justify-content-center">
-		<div class="col-md-6 col-12 d-flex justify-content-end"><img src="{% static 'galaxy-s8_gallery_front_maplegold_s4.png' %}" style="max-width: 100%;height:auto;" class="align-self-center" /></div>
+
 				<div class="col-md-6 col-12 align-self-center">گلکسی نوت 8 گوشی بزرگی است. در مقایسه با آیفون 7 پلاس، نوت 8 اندکی باریک‌تر و بلندتر است. البته وقتی صفحه‌نمایش بسیار بزرگ 6.3 اینچی آن را در نظر بگیریم، این ابعاد کاملا بخشودنی به نظر می‌رسند. تنها چیزی که بخشودنی نیست، جای بد حسگر اثرانگشت است. سامسونگ با قراردادن مجموعه‌ی فلش و سنسورها میان حسگر اثرانگشت و دوربین‌ها، تا حدی مشکل لکه‌شدن لنز دوربین را در اثر تماس اشتباهی انگشت کاهش داده، ولی اندازه‌ی بزرگ نوت 8 استفاده از این حسگر را کاملا دشوار می‌کند. البته به‌عنوان راه‌حل جایگزین می‌توانید روی اسکنر عنبیه و تشخیص چهره حساب باز کنید.</div>
 
 	</div>
 	<div class="container">
 		همه‌چیز در گلکسی نوت 8 از صفحه‌نمایش بزرگ و خیره‌کننده‌ی 6.3 اینچی آن شروع می‌شود. گلکسی نوت 8، از صفحه‌نمایش بدون مرز (infinity display) جدیدی استفاده می‌کند که اولین بار در گلکسی اس 8 و اس 8 پلاس دیده بودیم. البته انحنای لبه‌های اج صفحه‌نمایش در نوت 8 کمتر شده، تا فضای بیشتری برای کار با قلم S-Pen وجود داشته باشد. صفحه‌نمایش نوت 8، تنها 0.1 اینچ از صفحه‌نمایش اس 8 پلاس بزرگ‌تر است؛ ولی انحنای کمتر لبه‌ها باعث می‌شود حس کنید فضای بسیار بیشتری در اختیار دارید. به دلیل انحنای کمتر لبه‌های اج، نوت 8 نسبت به اس 8 ظاهری مستطیلی‌تر پیدا کرده است. به نظر ما اس 8 پلاس گوشی زیباتری است؛ ولی اگر با لبه‌های اج سامسونگ میانه‌ی خوبی نداشته باشید، احتمالا با نوت 8 راحت‌تر خواهید بود.
 	</div>
-	<div class="card card-inverse border-0 ">
-<img src="{% static 'galaxy-s8_camera-kv.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-   <img src="{% static 'galaxy-s8_camera-kv_ft.png' %}" style="max-width: 100%;height:auto;" class="align-self-center" /> 
-  </div>
-</div>
 
 <div class="container text-center my-5">
 	<p class=" font-weight-bold display-5">
@@ -59,26 +42,14 @@
 	</span>
 
 </div>
-	<div class="card card-inverse border-0 " style="background-color: #000000">
-<img src="{% static 'galaxy-s8_camera-capture_night-ft_bg.jpg' %}" style="max-width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-   <img src="{% static 'galaxy-s8-overview_body.png' %}" style="max-width: 100%;height:auto;" class="align-self-center" /> 
-  </div>
-</div>
+
 <div class="my-5  d-flex justify-content-center">
 	<div class="row  container">
-				<div class="col-md-6 col-12 align-self-center d-flex justify-content-end">گلکسی نوت 8 گوشی بزرگی است. در مقایسه با آیفون 7 پلاس، نوت 8 اندکی باریک‌تر و بلندتر است. البته وقتی صفحه‌نمایش بسیار بزرگ 6.3 اینچی آن را در نظر بگیریم، این ابعاد کاملا بخشودنی به نظر می‌رسند. تنها چیزی که بخشودنی نیست، جای بد حسگر اثرانگشت است. سامسونگ با قراردادن مجموعه‌ی فلش و سنسورها میان حسگر اثرانگشت و دوربین‌ها، تا حدی مشکل لکه‌شدن لنز دوربین را در اثر تماس اشتباهی انگشت کاهش داده، ولی اندازه‌ی بزرگ نوت 8 استفاده از این حسگر را کاملا دشوار می‌کند. البته به‌عنوان راه‌حل جایگزین می‌توانید روی اسکنر عنبیه و تشخیص چهره حساب باز کنید.</div>		<div class="col-md-6 col-12 d-flex justify-content-end">	<div class="card card-inverse border-0 " style="background-color: #000000">
-<img src="{% static 'galaxy-s8_camera-ready_action.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-   <img src="{% static 'galaxy-s8_camera-ready_action-ft.png' %}" style="max-width: 100%;height:auto;max-height: 100%" class="align-self-center" /> 
-  </div>
-</div></div>
+				<div class="col-md-6 col-12 align-self-center d-flex justify-content-end">گلکسی نوت 8 گوشی بزرگی است. در مقایسه با آیفون 7 پلاس، نوت 8 اندکی باریک‌تر و بلندتر است. البته وقتی صفحه‌نمایش بسیار بزرگ 6.3 اینچی آن را در نظر بگیریم، این ابعاد کاملا بخشودنی به نظر می‌رسند. تنها چیزی که بخشودنی نیست، جای بد حسگر اثرانگشت است. سامسونگ با قراردادن مجموعه‌ی فلش و سنسورها میان حسگر اثرانگشت و دوربین‌ها، تا حدی مشکل لکه‌شدن لنز دوربین را در اثر تماس اشتباهی انگشت کاهش داده، ولی اندازه‌ی بزرگ نوت 8 استفاده از این حسگر را کاملا دشوار می‌کند. البته به‌عنوان راه‌حل جایگزین می‌توانید روی اسکنر عنبیه و تشخیص چهره حساب باز کنید.</div>		<div class="col-md-6 col-12 d-flex justify-content-end">	</div>
 
 
 	</div></div>
-	<div class="card card-inverse border-0 " style="background-color: #000000">
-<img src="{% static 'galaxy-s8_camera-ready_action.jpg' %}" style="width: 100%;height:auto;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-   <img src="{% static 'galaxy-s8_camera-ready_action-ft.png' %}" style="max-width: 100%;height:auto;max-height: 100%" class="align-self-center" /> 
-  </div>
-</div>
+
 	<div></div>
 </div>
 </div>
@@ -89,6 +60,6 @@
 {% endblock %}
 {% block script %}
 <script type="text/javascript">
-  $('#body').addClass("blackBack");
+  $('#body').addClass("blackBackground");
 </script>
 {% endblock %}

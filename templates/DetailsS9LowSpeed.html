@@ -1,17 +1,5 @@
-{% extends "base.html" %}
-{% block header %}
- 
-                                      <a href="{% url 'home' %}" class="link">صفحه اصلی</a>
+{% extends "baseLowSpeed.html" %}
 
-{% endblock %}
-{% block headerFirstPart %}
-<div class="dropdown">
-  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
-</div>
-
-
-
-        {% endblock %}
 {% block content %}
 <div class="container my-5">
 <div class="row" style="direction: rtl;">
@@ -42,8 +30,4 @@
 
 </div>
 </div>
-{% endblock %}
-{% block aboutUsLink %}
-
-                                    <a href="{% url 'mtplus' %}" class="link text-white">مایکروتل</a>
 {% endblock %}
