@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin 
-from showsomething.views import HomePage, ReviewS9, ReviewS9Plus, DetailsS9, DetailsS9Plus, ReviewS9PlusLowSpeed, ReviewS9LowSpeed, BuyerViewLowSpeed, BuyerView ,mtplusView, DetailsS9LowSpeed, DetailsS9PlusLowSpeed, AskSpeed, lowSpeedView, MtpluslowSpeedView
+from showsomething.views import HomePage, ReviewS9, ReviewS9Plus, DetailsS9, DetailsS9Plus, ContactusView,  ReviewS9PlusLowSpeed, ReviewS9LowSpeed, BuyerViewLowSpeed, BuyerView ,mtplusView, DetailsS9LowSpeed, DetailsS9PlusLowSpeed, AskSpeed, lowSpeedView, MtpluslowSpeedView
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.conf import settings
 
@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^mtpluslowSpeed/$', MtpluslowSpeedView.as_view(), name='mtpluslowSpeed'),
     url(r'^DetailsS9pluslowSpeed/$', DetailsS9PlusLowSpeed.as_view(), name='Details9plusLowSpeed'),
     url(r'^DetailsS9lowSpeed/$', DetailsS9LowSpeed.as_view(), name='Detailss9LowSpeed'),
+    url(r'^contactus/', ContactusView, name='contactusUrl'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 

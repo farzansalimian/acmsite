@@ -1,11 +1,17 @@
 <!DOCTYPE>
 <html>
 <head>
+  {% block style %}
+  {% endblock %}
     <style>/* Included color classes.. 
+  }
+  }
 	.red 
 	.blue 
 	.yellow 
-*/figure.snip0053 {
+*/
+
+figure.snip0053 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   float: left;
@@ -184,7 +190,6 @@ figure.snip1111 {
   float: left;
   overflow: hidden;
   margin: 10px 1%;
-  min-width: 220px;
   width: 100%;
   background: #000000;
   color: #000000;
@@ -235,10 +240,7 @@ figure.snip1111 h3 span {
   font-weight: 800;
 }
 
-figure.snip1111 p {
-  font-size: 0.9em;
-  font-weight: 500;
-}
+
 
 figure.snip1111 .icons {
   width: 100%;
@@ -970,7 +972,8 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
         
                 <li>
 <div class="btn-group d-flex justify-content-center " style="top: 46%" >
-  <a class="" href="#images">تصاویر</a>
+  <a class="" href="#images"  >تصاویر</a>
+
 </div>
                 </li>
                 <li>
@@ -995,7 +998,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
         </nav>
     </div>
     <div id="myNav" class="overlay">
-  <div class="justify-content-center d-flex mt-5"">
+  <div class="justify-content-center d-flex mt-5 px-2">
                 <img src="{% static 'samsung_logo_PNG16.png' %}" style="max-width: 100%" >
 
   </div>
@@ -1003,15 +1006,15 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
   <div class="overlay-content">
         {% block headerFirstPart %}
         {% endblock %}
-        <a href="{% url 'lowSpeed' %}" class="">تغییر به اینترنت کم سرعت</a>
-<div class="dropdown">
+        <a href="{% url 'lowSpeed' %}" class="my-3">تغییر به اینترنت کم سرعت</a>
+<div class="dropdown my-3">
   <a href="#review" class=" link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
     <a class="dropdown-item" href='{% url "reviews9plus" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "reviews9" %}'>S9</a>
   </div>
-</div>    <div class="dropdown">
+</div>    <div class="dropdown my-3">
   <a href="#buy" class="dropbtn  link">پیش خرید</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
@@ -1019,7 +1022,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
     <a class="dropdown-item" href='{% url "buyS9" %}'>S9</a>
   </div>
 </div>
-<div class="dropdown">
+<div class="dropdown my-3">
   <a href="#details" class="dropbtn link">مشخصات فنی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
@@ -1029,10 +1032,10 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 </div>
 
 
-                                   <a href="{% url 'mtplus' %}" class="">مایکروتل</a>
+                                   <a href="{% url 'mtplus' %}" class="my-3">مایکروتل</a>
 
    
-    <div class="w-100">
+    <div class="w-100 my-2">
 <!-- Nav tabs -->
 <div class="justify-content-center d-flex">
 <ul class="nav nav-tabs" role="tablist">
@@ -1051,22 +1054,26 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane active show fade" id="home" role="tabpanel"> <div class="row p-5">
-       <div class="col-3">
+       <div class="col-6 col-md-3">
             <img src="{% static 'galaxy-s8_gallery_front_arcticsilver_s4.png' %}" width="100%">
-            <a href="http://www.samsung.com/global/galaxy/galaxy-s8/"> Galaxy s8</a>
+            <div class="d-flex justify-content-center">
+            <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center"> Galaxy s8</a>  </div>
        </div>
-       <div class="col-3">
+       <div class="col-6 col-md-3">
             <img src="{% static 'galaxy-s8_gallery_front_black_s4.png' %}" width="100%">
-               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">Galaxy s8+</a>
+            <div class="d-flex justify-content-center">
+               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">Galaxy s8+</a>  </div>
        </div>
-       <div class="col-3">
+       <div class="col-6 col-md-3">
             <img src="{% static 'galaxy-s8_gallery_front_maplegold_s4.png' %}" width="100%">
-               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">Galaxy note 8</a>
+            <div class="d-flex justify-content-center">
+               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">Galaxy note 8</a>  </div>
        </div>
-       <div class="col-3">
+       <div class="col-6 col-md-3">
             <img src="{% static 'galaxy-s8_gallery_front_orchidgray_s4.png' %}" width="100%">
-             <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">  Galaxy 7</a>
-       </div>
+            <div class="d-flex justify-content-center">
+             <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">  Galaxy 7</a>
+       </div>  </div>
     </div></div>
   <div class="tab-pane fade text-center" id="profile" role="tabpanel">
     
@@ -1092,22 +1099,28 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
   </div>
   <div class="tab-pane fade" id="messages" role="tabpanel">
     <div class="row p-5">
-       <div class="col-3">
+       <div class="col-6 col-md-3">
             <img src="{% static 'Start-Samsung-DeX.png' %}" width="100%">
-            <a href="http://www.samsung.com/global/galaxy/galaxy-s8/"> Sumsung Dex</a>
-       </div>
-       <div class="col-3">
+                                    <div class="d-flex justify-content-center">
+            <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center"> Sumsung Dex</a>
+       </div></div>
+       <div class="col-6 col-md-3">
             <img src="{% static 'images.jpg' %}" width="100%">
-               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">Sumsung Connent</a>
+                        <div class="d-flex justify-content-center">
+               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">Sumsung Connent</a>
+               </div>
        </div>
-       <div class="col-3">
-            <img src="{% static '_________-1_1x.jpg' %}" width="100%">
-               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">Sumsung Bixby</a>
-       </div>
-       <div class="col-3">
+       <div class="col-6 col-md-3">
+            <img src="{% static '_________-1_1x.jpg' %}" width="100%">    
+                                <div class="d-flex justify-content-center">
+               <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">Sumsung Bixby</a>
+       </div>  </div>
+       <div class="col-6 col-md-3">
             <img src="{% static '387C08A7-C572-4909-8A7F-9B554F77FD0A.jpeg' %}" width="100%">
-             <a href="http://www.samsung.com/global/galaxy/galaxy-s8/">  Sumsung 7pay</a>
-       </div>
+             <div class="d-flex justify-content-center">
+             <a href="http://www.samsung.com/global/galaxy/galaxy-s8/" class="text-center">  Sumsung 7pay</a>
+       </div>       </div>
+
     </div>
   </div>
 </div>
@@ -1118,7 +1131,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 
   
 </div>
-  <div style="height:12vh;width: 100% ;" class="header fixed-top"  id="Menu">
+  <div style="height:12vh;width: 100% ;min-height: 50px" class="header fixed-top"  id="Menu">
     <div class="w-100">
     <div class="hidden-lg-up  d-flex justify-content h-100 d-flex justify-content-between w-100"> 
             <div class="mx-2 font-weight-bold  align-self-center text-white">Galaxy s9 | s9+</div>  
@@ -1140,38 +1153,35 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
                 <span class="bar-bottom"></span></div>
             </div>
 </div>
-<div id="menu-links" class="  hidden-md-down d-flex justify-content-between px-5 " >
+<div id="menu-links" class="  hidden-md-down d-flex justify-content-center px-5 " >
 
 
-<div class="dropdown">
+<div class="dropdown mx-1">
   <a href="#review" class="text-white link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="" href="/contests/{{obj}}" style="display: block;">{{obj}}</a>
     <a class="dropdown-item" href='{% url "reviews9plus" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "reviews9" %}'>S9</a>
   </div>
 </div>
 
-<div class="dropdown">
+<div class="dropdown mx-1">
   <a href="#buy" class="dropbtn text-white link">پیش خرید</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="" href="/contests/{{obj}}" style="display: block;">{{obj}}</a>
     <a class="dropdown-item" href='{% url "buyS9Plus" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "buyS9" %}'>S9</a>
   </div>
 </div>
 
-<div class="dropdown">
-  <a href="#images" class="dropbtn text-white link">تصاویر</a>
-</div>
 
-<div class="dropdown">
+<div class="dropdown mx-1">
+    <a href='{% url "contactusUrl" %}' class="dropbtn text-white  mr-2" >تماس با ما</a>
+</div>
+<div class="dropdown mx-1">
   <a href="#details" class="dropbtn text-white link">مشخصات فنی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
-    <a class="" href="/contests/{{obj}}" style="display: block;">{{obj}}</a>
     <a class="dropdown-item" href='{% url "Details9plus" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "Detailss9" %}'>S9</a>
   </div>
@@ -1300,7 +1310,15 @@ function closeNav() {
                 $('#menu-icon').removeClass("hidden").removeClass("fixed-top");
               $('.overlay').removeClass("h-100");
 }
-</script>
+</script><script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js">
+    </script>
+    <script src="../js/JavaScript.js"></script>
+
+   
 {% block script %}{% endblock %}
 </body>
 </html>

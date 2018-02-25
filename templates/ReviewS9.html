@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block header %}
-                                 <a href="{% url 'home' %}" class="link">صفحه اصلی</a>
+                                 <a href="{% url 'home' %}" class="link  ml-3">صفحه اصلی</a>
 
 {% endblock %}
 {% block headerFirstPart %}
@@ -11,6 +11,9 @@
 {% block content %}
 
 <div class="container text-right my-5">
+	<div class="mb-5">
+<div class="h_iframe-aparat_embed_frame"> <span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/CEVtw/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" ></iframe></div>
+	</div>
 	<div class="">
 		همه‌چیز در گلکسی نوت 8 از صفحه‌نمایش بزرگ و خیره‌کننده‌ی 6.3 اینچی آن شروع می‌شود. گلکسی نوت 8، از صفحه‌نمایش بدون مرز (infinity display) جدیدی استفاده می‌کند که اولین بار در گلکسی اس 8 و اس 8 پلاس دیده بودیم. البته انحنای لبه‌های اج صفحه‌نمایش در نوت 8 کمتر شده، تا فضای بیشتری برای کار با قلم S-Pen وجود داشته باشد. صفحه‌نمایش نوت 8، تنها 0.1 اینچ از صفحه‌نمایش اس 8 پلاس بزرگ‌تر است؛ ولی انحنای کمتر لبه‌ها باعث می‌شود حس کنید فضای بسیار بیشتری در اختیار دارید. به دلیل انحنای کمتر لبه‌های اج، نوت 8 نسبت به اس 8 ظاهری مستطیلی‌تر پیدا کرده است. به نظر ما اس 8 پلاس گوشی زیباتری است؛ ولی اگر با لبه‌های اج سامسونگ میانه‌ی خوبی نداشته باشید، احتمالا با نوت 8 راحت‌تر خواهید بود.
 	</div>
@@ -40,4 +43,10 @@
 {% block aboutUsLink %}
 
                                     <a href="{% url 'mtplus' %}" class="link text-white">مایکروتل</a>
+{% endblock %}
+
+{% block style %}
+<style type="text/css">
+	.h_iframe-aparat_embed_frame{position:relative;} .h_iframe-aparat_embed_frame .ratio {display:block;width:100%;height:auto;} .h_iframe-aparat_embed_frame iframe {position:absolute;top:0;left:0;width:100%; height:100%;}
+</style>
 {% endblock %}

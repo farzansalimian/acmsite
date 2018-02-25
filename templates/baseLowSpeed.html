@@ -171,7 +171,6 @@ body {
 
 .overlay-content {
     position: relative;
-    top: 25%;
     width: 100%;
     text-align: center;
     margin-top: 30px;
@@ -263,6 +262,8 @@ background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Fi
           .blackBackground{
             background-color: #000000
           }
+          .hidden{display: none;}
+
 </style><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -273,29 +274,29 @@ background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Fi
 <body id="body">
 
 <div id="myNav" class="overlay">  
-	  <div class="justify-content-center d-flex mt-5">
+	  <div class="justify-content-center d-flex mt-5 px-2">
             {% load static %}    <img src="{% static 'samsung_logo_PNG16.png' %}" style="max-width: 100%" >
 
   </div>
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <div class="overlay-content">
-      <a href="{% url 'home' %}" class="">تغییر به اینترنت پرسرعت</a>
-    	<div class="dropdown">
+      <a href="{% url 'home' %}" class="my-3">تغییر به اینترنت پرسرعت</a>
+    	<div class="dropdown my-2">
   <a href="#review" class=" link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
     <a class="dropdown-item" href='{% url "reviews9plusLowSpeed" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "reviews9LowSpeed" %}'>S9</a>
   </div>
-</div> <div class="dropdown">
+</div> <div class="dropdown my-3">
   <a href="#buy" class="dropbtn  link">پیش خرید</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
     <a class="dropdown-item" href='{% url "buyS9PlusLowSpeed" %}'>S9+</a>
     <a class="dropdown-item" href='{% url "buyS9LowSpeed" %}'>S9</a>
   </div>
-</div><div class="dropdown">
+</div><div class="dropdown my-3">
   <a href="#details" class="dropbtn link">مشخصات فنی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
@@ -303,7 +304,7 @@ background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Fi
     <a class="dropdown-item" href='{% url "Detailss9LowSpeed" %}'>S9</a>
   </div>
 </div>
-                                   <a href="{% url 'mtpluslowSpeed' %}" class="">مایکروتل</a>
+                                   <a href="{% url 'mtpluslowSpeed' %}" class="my-3">مایکروتل</a>
 
 </div>
 
@@ -386,13 +387,15 @@ function openNav() {
     document.getElementById("myNav").style.width = "100%";
                 $('#Menu').removeClass("header").removeClass("fixed-top");
                 $('#menu-icon').addClass("hidden").addClass("fixed-top");
-
+                $('#buytabContent').addClass("hidden")
 }
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
                 $('#Menu').addClass("header").addClass("fixed-top");
                 $('#menu-icon').removeClass("hidden").removeClass("fixed-top");
+                $('#buytabContent').removeClass("hidden")
+                
 
 }
 </script>

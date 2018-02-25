@@ -5,28 +5,32 @@
 <style type="text/css">
 	.first-info{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background-image: url( "{% static 'galaxy-s8-overview_backscreen.jpg' %}");
     background-position: center;
 }
 </style>
 </head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-<body class=" bg-inverse first-info" style="height: 100vh;">
-<div class="container w-100 h-100 text-white d-flex justify-content-center">
-<div class="row align-self-center">
-	<div class="col-6" >
+<body class=" bg-inverse first-info">
+<div class="container w-100 h-100 text-white mt-3" style="min-height: 100vh">
+<div class="row align-self-center h-100" style="min-height: 100vh">
+	<div class="col-md-6 col-12 push-lg-1  d-flex justify-content-center align-self-center" >
 <div class="border-0">
 <img src="{% static 'galaxy-s8_camera-ready_action-ft.png' %}" style="width: auto;max-height:500px;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-	    <p class="card-text align-self-center d-flex justify-content-center">				<a href="{% url 'lowSpeed' %}" class="btn btn-info p-4 justify-content-center d-flex w-75"><small class="mx-1 align-self-center">بدون عکس و ویدیو</small>نه بابا</a>
+	    <p class="card-text align-self-center d-flex justify-content-center">				<a href="{% url 'lowSpeed' %}" class="btn btn-info p-4 justify-content-center d-flex "><small class="mx-1 align-self-center">بدون عکس و ویدیو</small>نه بابا</a>
 </p>
 </div>
   </div></div>
-  <div class="col-6" >
+  <div class="col-md-6 col-12 pull-lg-1 d-flex justify-content-center align-self-center" >
 <div class=" border-0 ">
 <img src="{% static 'galaxy-s8_camera-ready_action-ft.png' %}" style="width: auto;max-height:500px;" class="align-self-center" />  <div class="card-img-overlay justify-content-center d-flex">
-	    <p class="card-text align-self-center d-flex justify-content-center">		<a href="{% url 'home' %}" class="btn btn-info p-4 w-75 justify-content-center d-flex">اینترنت پرسرعت دارم</a>
+	    <p class="card-text align-self-center d-flex justify-content-center">		<a href="{% url 'home' %}" class="btn btn-info p-4 justify-content-center d-flex">اینترنت پرسرعت دارم</a>
 </p>
 </div>
   </div></div>
