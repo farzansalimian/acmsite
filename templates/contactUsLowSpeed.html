@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "baseLowSpeed.html" %}
 
 {%block content %}
 
@@ -63,7 +63,5 @@
 
 {% endblock %}
 {% block headerFirstPart %}
-<div class="dropdown">
-  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
-</div>
+  <a href="{% url 'lowSpeed' %}" class="my-3">صفحه اصلی</a>
         {% endblock %}

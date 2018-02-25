@@ -1,10 +1,6 @@
 {% extends "baseLowSpeed.html" %}
 
-{% block headerFirstPart %}
-<div class="dropdown">
-  <a href="{% url 'home' %}" class="dropbtn link">صفحه اصلی</a>
-</div>
-        {% endblock %}
+
 
 {% block header %}
  
@@ -119,3 +115,8 @@
 
                                     <a href="{% url 'mtplus' %}" class="link text-white">مایکروتل</a>
 {% endblock %}
+
+{% block headerFirstPart %}
+  <a href="{% url 'lowSpeed' %}" class="my-3">صفحه اصلی</a>
+        {% endblock %}
+        

@@ -100,3 +100,36 @@ def ContactusView(request):
 		form = ContactForm()
 		return render(request, 'contactUs.html', {'form': form})
 
+def ContactusViewLowSpeed(request):
+	
+	if request.method == 'POST':
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			subject = form.cleaned_data['subject']
+			message = form.cleaned_data['message']
+			sender = form.cleaned_data['sender']
+			cc_myself = form.cleaned_data['cc_myself']
+			fullName = form.cleaned_data['fullName']
+			recipients = ['farzan_salimiyan@yahoo.com']
+			html_message = loader.render_to_string(
+			'contactUsEmailLowSpeed.html',
+			{
+			'sender': sender,
+			'subject': subject,
+			'message': message,
+			'fullName':fullName
+			}
+			)
+			if cc_myself:
+				recipients.append(sender)
+			try:
+				send_mail(subject, message, sender, recipients, html_message = html_message)
+				return render(request, 'info.html', {'message': 'درخواست با موفقیت ارسال شد'})
+			except:
+				return render(request, 'Error.html', {'message': 'خطا در ارسال لطفا دوباره اقدام کنید'})
+			return render(request, 'Error.html', {'message': 'خطا در ارسال لطفا دوباره اقدام کنید'})
+
+	else:
+		form = ContactForm()
+		return render(request, 'contactUsLowSpeed.html', {'form': form})
+

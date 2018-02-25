@@ -281,8 +281,12 @@ background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Fi
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <div class="overlay-content">
+      {% block headerFirstPart %}
+        {% endblock %}
       <a href="{% url 'home' %}" class="my-3">تغییر به اینترنت پرسرعت</a>
-    	<div class="dropdown my-2">
+          <a href='{% url "contactusUrlLowSpeed" %}' class="my-3" >تماس با ما</a>
+
+    	<div class="dropdown my-3">
   <a href="#review" class=" link">نقد وبررسی</a>
     <a class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-content">
